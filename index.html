@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Slider Example</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <!--link to our javascript-->
+    <script src="javascript.js"></script>
+</head>
+<!-----------
+SLIDER ONLOAD SO IT AUTOMATICALLY RUNS
+----------->
+<body onload="slideA()">
+
+ <header>
+     <div class="w960">
+     <h1>Images! Images!</h1>
+     <nav>
+         <ul>
+             <li><a href="http://mitzisunshone.com">Back to MitziSunshine.com</a></li>
+             <li><a href="/">About</a></li>
+         
+         </ul>
+     </nav>
+         </div><!--960w-->
+</header>
+<div id="container" class="w960">
+    
+<!-----------
+START SLIDER STUFF
+--------------->
+    <div id="sliderContainer">
+        
+        <div class="slide">
+    <img src="img1.png" id="sliderimg"/>
+    <p class="slidertext">This is text.</p>
+    </div><!--end slide 1-->
+          
+        <div class="slide hide">
+    <img src="img2.png" id="sliderimg"/>
+    <p class="slidertext">This some text.</p>
+    </div><!--end slide 2-->
+          
+        <div class="slide hide">
+    <img src="img3.png" id="sliderimg"/>
+    <p class="slidertext">This is the text that never ends. It goes on and on my friends</p>
+    </div><!--end slide 3-->
+        
+    <div id="left_holder">
+        <a class="left" onclick="slide(-1)">&#10094;</a>
+    </div>
+    <div id="right_holder"> 
+        <a class="right" onclick="slide(1)">&#10095;</a>
+    </div>
+    <div class="imagedots">
+      <span class="dot active" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+    </div><!--slider container-->
+<!-------------
+END SLIDER STUFF
+--------------->
+            
+    <div id="randomtext">
+        <h2>Image Sliders are Cool</h2>
+        <h3>Or at least popular</h3>
+        <p>De expetendis comprehenderit, ad mandaremus e singulis ne si legam quamquam, est 
+            esse admodum exercitation. Incurreret malis amet et quorum, a quis exercitation 
+            est quis senserit exquisitaque, quibusdam quo quid ita tamen reprehenderit 
+            senserit quem occaecat in incididunt noster nescius, e irure expetendis 
+            exquisitaque ubi o do familiaritatem. Hic quis consequat exquisitaque e fugiat 
+            qui appellat, aliquip noster consequat voluptate est mentitum cillum cernantur. 
+            Ullamco quo probant et ad aute relinqueret, sunt an litteris ut o culpa labore 
+            ab quamquam, offendit quis incurreret nostrud do fugiat mandaremus arbitrantur, 
+            lorem mandaremus se voluptate in fore cupidatat nescius. Nescius cillum quem 
+            mandaremus nulla, ingeniis consectetur te laboris. Nam a illum ingeniis. Lorem 
+            expetendis reprehenderit, id dolor an legam sed admodum dolore ne iudicem 
+            concursionibus, an cillum velit malis pariatur.E amet sunt illum mandaremus, ipsum incididunt tempor, ne ne labore enim quorum, 
+            an iis dolor officia. E amet mentitum aliquip. Iudicem nulla nescius, senserit 
+            quis multos cernantur minim non sed enim cupidatat consequat se iudicem summis 
+            eu eiusmod despicationes. Aliqua aliquip quo fore cillum ut hic mentitum an 
+            litteris, magna ab mandaremus ubi enim et doctrina ab eram voluptate, nulla 
+            ingeniis voluptate, id si nulla eiusmod ubi se enim voluptatibus se nescius et 
+            cillum. Pariatur coniunctione o mentitum, in eu efflorescere est illum mentitum 
+            deserunt, et veniam ea elit. Ita dolore consequat concursionibus est quid 
+            quamquam ita culpa sint et multos appellat se iudicem, quo velit nulla culpa 
+            tempor quo multos possumus domesticarum, an ingeniis fidelissimae, e eram velit 
+            ex excepteur do possumus ab anim. Aliqua ea occaecat id ne occaecat adipisicing, 
+            ab magna cillum quorum incurreret sed ubi est cillum cillum esse.
+            Ne tempor in quibusdam. Illum ea do legam expetendis ut nisi eiusmod vidisse. 
+            Occaecat quem malis hic legam, pariatur si esse iudicem. Incididunt ad veniam 
+            offendit, arbitror tamen quid litteris veniam. Vidisse multos quid in sunt. Aute 
+            id quibusdam te summis non magna nam appellat ex noster. Quae nam offendit, fore 
+            iis laboris id consequat legam aute quibusdam nisi est fugiat cupidatat 
+            cohaerescant.
+            Quo esse excepteur, veniam consequat et illum aliqua ab qui pariatur 
+            exquisitaque non iudicem ex enim appellat. Ex nam noster arbitror, ab veniam 
+            imitarentur, legam cohaerescant officia aliqua tempor et in sed firmissimum e 
+            elit excepteur ut familiaritatem, et ex fore fabulas, cupidatat amet commodo 
+            probant, ubi quae veniam irure incurreret. Aliquip cillum ad admodum 
+            concursionibus, litteris lorem tempor possumus do e quem quae labore laborum in 
+            sed sed cillum vidisse. Non offendit fidelissimae a e eiusmod praesentibus in 
+            velit sempiternum cernantur fore mentitum si aliqua e et irure arbitror de se 
+            doctrina in laboris eu admodum cillum ita appellat illustriora, elit officia hic 
+            duis lorem si ab noster quae ita possumus. Probant esse quorum ea esse. Ut dolor 
+            arbitror philosophari, multos litteris quo velit fugiat. Esse firmissimum 
+            litteris dolor voluptate. Excepteur ad aliqua te elit doctrina ut litteris ubi 
+            laboris irure lorem ab quid, ita quid occaecat mentitum, mentitum firmissimum 
+            aut cupidatat si arbitror an laborum o expetendis ex aliquip, dolor vidisse ut 
+            nulla malis.
+            E ita graviterque. Quid reprehenderit incurreret quae admodum. Te expetendis 
+            familiaritatem, sunt eiusmod concursionibus, admodum aute ad litteris 
+            coniunctione a expetendis anim probant. Velit consectetur arbitror quorum 
+            mandaremus o cernantur despicationes ut mandaremus, quae ea admodum ex multos 
+            hic officia et sint, cillum occaecat deserunt, sint nescius de efflorescere ab 
+            pariatur in elit, arbitror magna eu incurreret tractavissent. Velit arbitror hic 
+            legam anim se senserit ut nisi appellat. Laborum enim appellat.
+        
+        </p>
+    
+    </div>
+    
+
+</div> <!--Container-->
+    
+</body>
+</html>

@@ -1,0 +1,214 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: #333;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+h2{
+    margin: 10px 0;
+}
+header{
+    background-color: cornflowerblue;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+header h1{
+    color: cornsilk;
+    font-size: 40px;
+    float: left;
+    margin-top: 20px;
+}
+header nav{
+    float: right;
+}
+header nav ul{
+    list-style: none;
+}
+header nav ul li{
+    float: left;
+    padding: 5px;
+    margin-top: 30px;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: cornsilk;
+}
+header nav ul li a:visited{
+    color: cornsilk;
+}
+header nav ul li a:hover{
+    position: relative;
+    top: -1px;
+}
+header nav ul li a:active{
+    position: relative;
+    top: 1px;
+}
+
+.w960 {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+p{
+    font-size: 20px;
+    margin-top: 10px;
+    color: floralwhite;
+}
+#container{
+    position: relative;
+    margin: 0 auto;
+    padding-top: 125px;
+}
+/*--------------
+SLIDER STYLES
+---------------*/
+
+/* slider-container */
+#sliderContainer{
+    height: 300px; /*height of images*/
+    width: 960px; /*width of images*/
+    position: relative; /*so we can position stuff in it*/
+}
+.sliderimg{
+    height: 300px;
+    width: 960px;
+    position: absolute;
+}
+/*these are the arrows for next/prev*/
+#left_holder, #right_holder{
+    height: 300px;
+    width: 100px;
+}
+#left_holder{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+#right_holder{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+/*being I'm using text and not an image for the arrows I've quite a bit of styling here*/
+.left, .right{
+    cursor: pointer;
+    color: cornsilk;
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    padding: 5px;
+    z-index: 2;
+}
+.left{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 40%;
+    left: 0px;
+}
+.right{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 40%;
+    right: 0px;
+    text-align: right;
+}
+
+/* on hover add a transparent black */
+.left:hover, .right:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/*this class is used in the begining to hide all inactive slides on page load. The Javascript removes this once the Javascript takes over handling the display*/
+.hide{
+    display: none;
+}
+
+/*caption text*/
+.slidertext{
+    color: #f2f2f2;
+    font-size: 20px;
+    padding: 10px 100px 10px 50px;
+    position: absolute;
+    bottom: 50px;
+    right: 0; /*alines the caption box to the right*/
+    width: 40%; /*adjust how wide you want the box to be*/
+    text-align: left;
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* The dots/bullets/indicators */
+.imagedots{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 10px;
+}
+.dot {
+    cursor:pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #ccc;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: inline-block;
+    -webkit-transition: background-color 0.7s ease;
+    -moz-transition: background-color 0.7s ease;
+    -o-transition: background-color 0.7s ease;
+    transition: background-color 0.7s ease;
+    z-index: 2;
+}
+
+.active, .dot:hover {
+    /*customize this to change what the active/hovered dot looks like*/
+  background-color: cornflowerblue;
+}
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    -moz-animation-name: fade;
+    -moz-animation-duration: 1.5s;
+    -o-animation-name: fade;
+    -o-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@-moz-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@-o-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
