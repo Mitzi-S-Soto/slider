@@ -6,3 +6,7 @@ This slider takes HTML elements with the same class and hides all but a chosen e
 A bug was fixed that had slides chosen by dot indicators or next/prev button to quickly jump to the next slide.
 
 Code is heavily commented.
+
+
+NOTE:
+Currently you can only have one slider on a page. It will not work if you put two or more sliders in the HTML.
