@@ -1,5 +1,9 @@
-var imagecount = 1; //starting image/slide
-var total = 3; //total number of images/slides
+//These variables should be all you need to change in the javascript file
+var imagecount = 1; //starting image/slide, doesn't need to change
+var total = 4; //total number of images/slides
+var slidespeed = 5000; //change this to change speed of slider 5000 = 5s
+
+//------All the fancy code------
 //store our sliding function as a variable so we don't have to write it out all the time
 var slidefunction = function slideA(x){
     //add to the imagecount to change active slide number
@@ -27,8 +31,7 @@ var slidefunction = function slideA(x){
     dots[imagecount-1].className += " active";
 }
 //autoplay the slideA function
-var autoslide = window.setInterval(slidefunction, 5000//change slide every 5 seconds
-);
+var autoslide = window.setInterval(slidefunction, slidespeed);
 //This function works with the current slide dot buttons
 function currentSlide(x){
     //stop the autoplay so we can reset the timer
@@ -58,8 +61,7 @@ function currentSlide(x){
     dots[imagecount-1].className += " active";
     //these numbers -1 because in the array you create the #1 is actually 0
     //make the slides auto run again
-     autoslide = window.setInterval(slidefunction, 5000//change slide every 5 seconds
-);
+     autoslide = window.setInterval(slidefunction, slidespeed);
 }
 
 //make the next/prev buttons work
@@ -90,6 +92,5 @@ function slide(x){
     //make the active dot active
     dots[imagecount-1].className += " active";
     //autoplay the slides again
-     autoslide = window.setInterval(slidefunction, 5000//change slide every 5 seconds
-);
+     autoslide = window.setInterval(slidefunction,slidespeed);
 }

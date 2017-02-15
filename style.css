@@ -1,63 +1,96 @@
+/*--------------
+M-Sunshine Slider
+style.css
+---------------*/
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
+/*--------------
+WEBPAGE STYLES
+not needed for slider
+---------------*/
 body{
     background: #333;
     padding: 0;
     margin: 0;
     color: white;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 h2{
     margin: 10px 0;
 }
 header{
     background-color: cornflowerblue;
-    height: 100px;
+    height: 75px;
     padding: 0;
     margin: 0;
     position: fixed;
     width: 100%;
     z-index: 100;
+    border-bottom: 2px solid cornsilk;
+}
+footer{
+    background-color: cornflowerblue;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    border-top: 4px solid #333;
 }
 header h1{
     color: cornsilk;
     font-size: 40px;
     float: left;
-    margin-top: 20px;
+    margin-top: 15px;
 }
-header nav{
+header nav, footer nav{
     float: right;
 }
-header nav ul{
+header nav ul, footer nav ul{
     list-style: none;
 }
 header nav ul li{
     float: left;
     padding: 5px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
-header nav ul li a{
+footer nav ul li{
+    float: left;
+    padding: 10px;
+    padding-bottom: 0;
+    
+}
+footer span{
+    float: left;
+    padding-top: 10px;
+}
+header nav ul li a, footer nav ul li a{
     text-decoration: none;
     color: cornsilk;
 }
-header nav ul li a:visited{
+header nav ul li a:visited,footer nav ul li a:visited{
     color: cornsilk;
 }
-header nav ul li a:hover{
+header nav ul li a:hover, footer nav ul li a:hover{
     position: relative;
     top: -1px;
 }
-header nav ul li a:active{
+header nav ul li a:active, footer nav ul li a:active{
     position: relative;
     top: 1px;
+}
+#container{
+    margin: 0 auto;
+    padding-top: 125px;
+    background: #444;
 }
 
 .w960 {
     width: 960px;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 25px;
 }
 
 p{
@@ -65,72 +98,22 @@ p{
     margin-top: 10px;
     color: floralwhite;
 }
-#container{
-    position: relative;
-    margin: 0 auto;
-    padding-top: 125px;
-}
+
+
 /*--------------
 SLIDER STYLES
 ---------------*/
 
 /* slider-container */
-#sliderContainer{
-    height: 300px; /*height of images*/
-    width: 960px; /*width of images*/
+.sliderContainer{
+    height: 300px; /*height of images/slides*/
+    width: 960px; /*width of images/slides*/
+    margin-left: -25px; /*adjust for the padding of the .w960 styled above, as the images/sliders are the width of the container minus the padding*/
     position: relative; /*so we can position stuff in it*/
 }
 .sliderimg{
-    height: 300px;
-    width: 960px;
-    position: absolute;
-}
-/*these are the arrows for next/prev*/
-#left_holder, #right_holder{
-    height: 300px;
-    width: 100px;
-}
-#left_holder{
-    position: absolute;
-    left: 0px;
-    top: 0px;
-}
-#right_holder{
-    position: absolute;
-    right: 0px;
-    top: 0px;
-}
-
-/*being I'm using text and not an image for the arrows I've quite a bit of styling here*/
-.left, .right{
-    cursor: pointer;
-    color: cornsilk;
-    font-weight: bold;
-    font-size: 25px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    padding: 5px;
-    z-index: 2;
-}
-.left{
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    top: 40%;
-    left: 0px;
-}
-.right{
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    top: 40%;
-    right: 0px;
-    text-align: right;
-}
-
-/* on hover add a transparent black */
-.left:hover, .right:hover {
-  background-color: rgba(0,0,0,0.8);
+    height: 300px;/*height of images/slides*/
+    width: 960px;/*width of images/slides*/
 }
 
 /*this class is used in the begining to hide all inactive slides on page load. The Javascript removes this once the Javascript takes over handling the display*/
@@ -138,7 +121,7 @@ SLIDER STYLES
     display: none;
 }
 
-/*caption text*/
+/*caption box*/
 .slidertext{
     color: #f2f2f2;
     font-size: 20px;
@@ -150,8 +133,86 @@ SLIDER STYLES
     text-align: left;
     background-color: rgba(0,0,0,0.5);
 }
+/*slider links in slidertext*/
+.slidertext a{
+    text-decoration: none;
+    color: cornflowerblue;
+}
+.slidertext a:visited{
+    color: cornflowerblue;
+}
+.slidertext a:hover{
+    cursor: pointer;
+    position: relative;
+    top: -1px;
+}
+.slidertext a:active{
+    position: relative;
+    top: 1px;
+}
 
-/* The dots/bullets/indicators */
+/*if you want to style individual slides, give them an ID and style them here*/
+#slide4{
+    height: 300px;/*height of images/slides*/
+    width: 960px;/*width of images/slides*/
+    background-color: cadetblue;
+    position: absolute;
+    padding: 30px;
+}
+
+/*----NEXT/PREV ARROW CSS--*/
+/*--these boxes hold your next/prev arrows/html--*/
+.left_box, .right_box{
+    height: 300px; /*height of images/slides*/
+    width: 100px;
+}
+.left_box{
+    /*place at left of slide*/
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.right_box{
+    /*place at right of slide*/
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+/*--these are the styles for your arrows/html in the boxes--*/
+/*being I'm using text and not an image for the arrows I've quite a bit of styling here*/
+.prev, .next{
+    cursor: pointer;
+    color: cornsilk;
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    padding: 5px;
+    z-index: 2;
+}
+.prev{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 40%;
+    left: 0px;
+}
+.next{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 40%;
+    right: 0px;
+    text-align: right;
+}
+
+/* on hover add a transparent black */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+/*----END NEXT/PREV ARROW CSS--*/
+
+/*--The dots/bullets/indicators--*/
 .imagedots{
     width: 100%;
     margin: 0 auto;
@@ -166,6 +227,7 @@ SLIDER STYLES
     width: 15px;
     margin: 0 2px;
     background-color: #ccc;
+    border: 1px solid cornsilk;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -181,7 +243,7 @@ SLIDER STYLES
     /*customize this to change what the active/hovered dot looks like*/
   background-color: cornflowerblue;
 }
-/* Fading animation */
+/*---Fading animation used for dots---*/
 .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
