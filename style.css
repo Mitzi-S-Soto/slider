@@ -1,12 +1,23 @@
-/*--------------
+/*--
 M-Sunshine Slider
 style.css
----------------*/
+
+This CSS is for the M-Sunshine Slider full website. It styles both the site and the slider and is responsive to different screen sizes and changes accordingly.
+
+created by Mitzi S. Soto
+--*/
+
+/*--
+STYLE WHEN SITE DOESN'T FIT MEDIA QUERY (large version)
+--*/
+
+/*--clear some basic styles and add box-sizing--*/
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
+
 /*--------------
 WEBPAGE STYLES
 not needed for slider
@@ -21,6 +32,13 @@ body{
 h2{
     margin: 10px 0;
 }
+p{
+    font-size: 20px;
+    margin-top: 10px;
+    color: floralwhite;
+}
+
+/*--header--*/
 header{
     background-color: cornflowerblue;
     height: 75px;
@@ -31,6 +49,14 @@ header{
     z-index: 100;
     border-bottom: 2px solid cornsilk;
 }
+header h1{
+    color: cornsilk;
+    font-size: 40px;
+    float: left;
+    margin-top: 15px;
+}
+
+/*--footer--*/
 footer{
     background-color: cornflowerblue;
     height: 40px;
@@ -39,12 +65,12 @@ footer{
     width: 100%;
     border-top: 4px solid #333;
 }
-header h1{
-    color: cornsilk;
-    font-size: 40px;
+footer span{
     float: left;
-    margin-top: 15px;
+    padding-top: 10px;
 }
+
+/*--Navigation--*/
 header nav, footer nav{
     float: right;
 }
@@ -60,11 +86,6 @@ footer nav ul li{
     float: left;
     padding: 10px;
     padding-bottom: 0;
-    
-}
-footer span{
-    float: left;
-    padding-top: 10px;
 }
 header nav ul li a, footer nav ul li a{
     text-decoration: none;
@@ -81,24 +102,18 @@ header nav ul li a:active, footer nav ul li a:active{
     position: relative;
     top: 1px;
 }
+
+/*--sizing containers--*/
 #container{
     margin: 0 auto;
     padding-top: 125px;
     background: #444;
 }
-
 .w960 {
     width: 960px;
     margin: 0 auto;
     padding: 0 25px;
 }
-
-p{
-    font-size: 20px;
-    margin-top: 10px;
-    color: floralwhite;
-}
-
 
 /*--------------
 SLIDER STYLES
@@ -133,6 +148,7 @@ SLIDER STYLES
     text-align: left;
     background-color: rgba(0,0,0,0.5);
 }
+
 /*slider links in slidertext*/
 .slidertext a{
     text-decoration: none;
@@ -178,6 +194,7 @@ SLIDER STYLES
     right: 0px;
     top: 0px;
 }
+
 /*--these are the styles for your arrows/html in the boxes--*/
 /*being I'm using text and not an image for the arrows I've quite a bit of styling here*/
 .prev, .next{
@@ -190,6 +207,7 @@ SLIDER STYLES
     padding: 5px;
     z-index: 2;
 }
+/*--placing the arrows near center of images edge--*/
 .prev{
     height: 50px;
     width: 50px;
@@ -213,6 +231,7 @@ SLIDER STYLES
 /*----END NEXT/PREV ARROW CSS--*/
 
 /*--The dots/bullets/indicators--*/
+/*--places the dots in the bottom center of the slides--*/
 .imagedots{
     width: 100%;
     margin: 0 auto;
@@ -221,6 +240,7 @@ SLIDER STYLES
     position: absolute;
     bottom: 10px;
 }
+/*--what the dots look like--*/
 .dot {
     cursor:pointer;
     height: 15px;
@@ -238,11 +258,11 @@ SLIDER STYLES
     transition: background-color 0.7s ease;
     z-index: 2;
 }
-
 .active, .dot:hover {
     /*customize this to change what the active/hovered dot looks like*/
   background-color: cornflowerblue;
 }
+
 /*---Fading animation used for dots---*/
 .fade {
     -webkit-animation-name: fade;
@@ -254,23 +274,257 @@ SLIDER STYLES
     animation-name: fade;
     animation-duration: 1.5s;
 }
-
 @-webkit-keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
 }
-
 @-moz-keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
 }
-
 @-o-keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
 }
-
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
 }
+
+/*-----
+!!
+!!!
+!!!!
+!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+MEDIA QUERY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+STYLE MAX-WIDTH: 959;!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!
+!!!
+!!
+!
+----*/
+@media (min-width: 600px) and (max-width: 959px) {
+
+/*--------------
+WEBPAGE STYLES
+not needed for slider
+---------------*/
+
+/*--header--*/
+header{
+    height: 125px;
+}
+header h1{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: block;
+    float: none;
+}
+    
+/*--footer--*/
+footer{
+    height: 75px;
+}
+    
+/*--Navigation--*/
+header nav, footer nav{
+    float: left;
+    display: block;
+}
+header nav ul{
+    border-top: 4px solid cornsilk;
+    margin-top: 0;
+ }
+header nav ul li{
+    display: block;
+    margin-top: 10px;
+}
+footer nav ul li{
+    padding: 10px 10px 0px 0px;
+}
+    
+/*--sizing containers--*/
+#container{
+    padding-top: 150px;
+}
+.w960 {
+    width: 80%;
+    min-width: 550px;
+}
+
+/*--------------
+SLIDER STYLES
+---------------*/
+
+/* slider-container */
+.sliderContainer{
+    width: 100%; /*width of images/slides*/
+    margin-left: 0; /*not needed as we work with %*/
+}
+.sliderimg{
+    width: 100%;/*width of images/slides*/
+    object-fit: cover; /*so images aren't distorted, but will be cut off to fit in box*/
+}
+
+/*caption box*/
+.slidertext{
+    width: 60%; /*adjust how wide you want the box to be*/
+}
+
+/*if you want to style individual slides, give them an ID and style them here*/
+#slide4{
+    width: 100%;/*width of images/slides*/
+    padding: 5px;
+}
+
+/*----NEXT/PREV ARROW CSS--*/
+
+/*--these are the styles for your arrows/html in the boxes--*/
+.prev, .next{
+    font-size: 30px;
+    background-color: rgba(0,0,0,0.8);
+}
+/* I took out the on hover and made it always have the background*/
+.prev:hover, .next:hover {
+  background-color: none;
+}
+/*----END NEXT/PREV ARROW CSS--*/
+
+/*--The dots/bullets/indicators--*/
+.dot {
+    height: 30px;
+    width: 30px;
+}
+
+}/*end style 900*/
+
+
+/*-----
+!!
+!!!
+!!!!
+!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+MEDIA QUERY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+STYLE MAX-WIDTH: 599;!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!
+!!!
+!!
+!
+----*/
+
+@media (max-width: 599px){
+/*--------------
+WEBPAGE STYLES
+not needed for slider
+---------------*/
+
+/*--header--*/
+header{
+    height: 120px;
+}
+header h1{
+    font-size: 25px;
+    margin: 10px 0 0 0;
+    padding: 0;
+    float: none;
+}
+
+/*--footer--*/
+footer{
+    height: 100px;
+}
+
+/*--Navigation--*/
+header nav, footer nav{
+    float: left;
+} 
+header nav{
+     border-top: 2px solid cornsilk;
+}
+header nav ul li{
+    font-size: 20px;
+    padding: 2px;
+    margin-top: 5px;
+    float: none;
+}
+footer nav ul li{
+    float: left;
+    padding: 10px 10px 0px 0px;
+}
+
+/*--sizing containers--*/
+#container{
+    padding-top: 150px;
+}
+.w960 {
+    width: 100%;
+    min-width: 300px;
+    padding: 0 10px;
+}
+
+/*--------------
+SLIDER STYLES
+---------------*/
+
+/* slider-container */
+.sliderContainer{
+    width: 100%; /*width of images/slides*/
+    margin-left: 0; /*this isn't needed as the width above is a %*/
+}
+.sliderimg{
+    width: 100%;/*width of images/slides*/
+    object-fit: contain;/*fits the image in the box*/
+    background-color: cornflowerblue;
+}
+
+/*caption box*/
+.slidertext{
+    width: 100%; /*adjust how wide you want the box to be*/
+}
+
+/*if you want to style individual slides, give them an ID and style them here*/
+#slide4{
+    width: 100%;/*width of images/slides*/
+}
+#slide4 p{
+    /*the text doesn't fit so I just hide it*/
+    display: none;
+}
+
+/*----NEXT/PREV ARROW CSS--*/
+/*--these boxes hold your next/prev arrows/html--*/
+.left_box, .right_box{
+    width: 50px;
+}
+
+/*--these are the styles for your arrows/html in the boxes--*/
+/*being I'm using text and not an image for the arrows I've quite a bit of styling here*/
+.prev, .next{
+    font-size: 40px;
+    background-color: rgba(0,0,0,0.8);
+}
+.prev{
+    top: 80%;
+}
+.next{
+    top: 80%;
+}
+
+/* I took out the on hover and made it always have the background*/
+    .prev:hover, .next:hover {
+  background-color: none;
+}
+/*----END NEXT/PREV ARROW CSS--*/
+
+/*--The dots/bullets/indicators--*/
+
+.dot {
+    height: 30px;
+    width: 30px;
+}
+
+}/*--END MEDIA QUERY 599---*/
